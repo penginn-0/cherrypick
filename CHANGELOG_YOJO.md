@@ -29,6 +29,7 @@ Misskey 2024.10.1
 - Enhance: TLオプション表示有無切り替えの選択肢にメディアタイムラインを追加 [#609](https://github.com/yojo-art/cherrypick/pull/609)
 
 ### Server
+- Change: サードパーティクライアント互換性のため`i/notifications-grouped`で新規投稿は`groupNewNotes: true`でなければまとめないように [#632](https://github.com/yojo-art/cherrypick/pull/632)
 - Change: `ap/fetch-outbox`から`includeAnnounce`オプションを削除 [#606](https://github.com/yojo-art/cherrypick/pull/606)
 - Enhance: 高度な検索であいまい検索が無効な時ワイルドカードを利用可能に [#564](https://github.com/yojo-art/cherrypick/pull/564)
 - Feat: フォローしているユーザーなら鍵ノートでもアンテナにひっかかるように [#568](https://github.com/yojo-art/cherrypick/pull/568)

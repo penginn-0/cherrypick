@@ -53,6 +53,7 @@ export const paramDef = {
 		excludeTypes: { type: 'array', items: {
 			type: 'string', enum: [...groupedNotificationTypes, ...obsoleteNotificationTypes],
 		} },
+		groupNewNotes: { type: 'boolean', default: false },
 	},
 	required: [],
 } as const;
@@ -157,7 +158,7 @@ export default class extends Endpoint<typeof meta, typeof paramDef> { // eslint-
 					prevGroupedNotification.id = notification.id;
 					continue;
 				}
-				if (prev.type === 'note' && notification.type === 'note') {
+				if (prev.type === 'note' && notification.type === 'note' && ps.groupNewNotes) {
 					if (prevGroupedNotification.type !== 'note:grouped') {
 						groupedNotifications[groupedNotifications.length - 1] = {
 							type: 'note:grouped',
